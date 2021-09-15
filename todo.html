@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+
+     <link rel="stylesheet" href="css/todo.css">
+     <link rel="stylesheet" href="menuToggle.css">
+
+     <title>ToDo List</title>
+</head>
+<body>
+     <div class="menu-wrap">
+          <input type="checkbox" class="toggler">
+          <div class="hamburger">
+               <div></div>
+          </div>
+          <div class="menu">
+               <div>
+                    <div>
+                         <ul>
+                              <li><a href="index.html">Home</a></li>
+                              <li><a href="#">Todo</a></li>
+                              <li><a href="#">Contact</a></li>
+                         </ul>
+                    </div>
+               </div>
+          </div>
+     </div>
+
+     <div id="wrapper">
+          <header>
+               <!-- <div class="header-content"> -->
+                    <div class="clear">
+                         <i class="fas fa-sync"></i>
+                    </div>
+                    <div class="intro">
+                         <h1 id="greet"></h1>
+                         <h2 id="date"></h2>
+                    </div>
+               <!-- </div> -->
+          </header>
+
+          <section class="content">
+               <h1>ToDo List</h1>
+               <ul id="list">
+                    <li class="item">
+                         <i class="fas fa-circle" job="complete" id="0"></i>
+                         <p class="text">Drink Water</p>
+                         <i class="far fa-trash-alt" job="delete" id="0"></i>
+                    </li>
+                    <li class="item">
+                         <i class="fas fa-circle" job="complete" id="0"></i>
+                         <p class="text">Drink Water</p>
+                         <i class="far fa-trash-alt" job="delete" id="0"></i>
+                    </li>
+                    <li class="item">
+                         <i class="fas fa-circle" job="complete" id="0"></i>
+                         <p class="text">Drink Water</p>
+                         <i class="far fa-trash-alt" job="delete" id="0"></i>
+                    </li>
+                    <li class="item">
+                         <i class="fas fa-circle" job="complete" id="0"></i>
+                         <p class="text">Drink Water</p>
+                         <i class="far fa-trash-alt" job="delete" id="0"></i>
+                    </li>
+                    <li class="item">
+                         <i class="fas fa-circle" job="complete" id="0"></i>
+                         <p class="text">Drink Water</p>
+                         <i class="far fa-trash-alt" job="delete" id="0"></i>
+                    </li>
+               </ul>
+               <div id="add-to-do">
+                    <input type="text" name="text" id="input" placeholder="Add a ToDo" >
+                    <i class="fas fa-plus-circle"></i>
+               </div>
+          </section>
+     </div>
+
+     <script src="../javascript/todo.js"></script>
+</body>
+</html>
