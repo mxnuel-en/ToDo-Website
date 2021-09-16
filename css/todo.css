@@ -35,10 +35,6 @@ header::before {
      height: 100%;
      z-index: -1;
 }
-/* .header-content {
-     align-self: center;
-     justify-content: center;
-} */
 .intro{
      text-align: center;
      align-self: center;
@@ -46,12 +42,14 @@ header::before {
 .content{
      padding: 20px;
      position: relative;
-     /* overflow-y: scroll; */
 }
 .content h1 {
      text-transform: uppercase;
      text-align: center;
      margin-bottom: 20px;
+}
+h1, h2 {
+     font-size: 1.4rem;
 }
 .clear{
      position: absolute;
@@ -63,13 +61,13 @@ header::before {
 }
 #list{
      margin-bottom: 30px;
+     /* border: 2px solid black; */
+     height: 310px;
+     overflow-y: scroll;
 }
 .item{
      display: flex;
      flex-direction: row;
-     /* justify-content: space-between; */
-     /* gap: 10px; */
-     /* border: 2px solid black; */
      border-radius: 10px;
      padding: 15px;
      margin: 10px 0;
@@ -95,5 +93,4 @@ header::before {
      font-size: 2.5em;
      top: 5px;
      right: 5px;
-
 }
