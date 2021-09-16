@@ -16,9 +16,6 @@ body{
      height: 100vh;
      position: relative;
 }
-#container {
-     /* position: relative; */
-}
 header{
      position: relative;
      background: var(--overlay-color);
@@ -44,7 +41,7 @@ header::before {
      align-self: center;
 }
 .content{
-     padding: 20px;
+     padding: 10px 20px;
      position: relative;
 }
 .content h1 {
@@ -53,7 +50,7 @@ header::before {
      margin-bottom: 20px;
 }
 h1, h2 {
-     font-size: 1.4rem;
+     font-size: 1.2rem;
 }
 .clear{
      position: absolute;
@@ -66,7 +63,7 @@ h1, h2 {
 #list{
      margin-bottom: 30px;
      /* border: 2px solid black; */
-     height: 310px;
+     height: 51vh;
      overflow-y: scroll;
 }
 .item{
@@ -74,7 +71,7 @@ h1, h2 {
      flex-direction: row;
      border-radius: 10px;
      padding: 15px;
-     margin: 10px 0;
+     margin-bottom: 10px;
      background-color: whitesmoke;
      color: black;
      font-size: .8rem;
@@ -85,18 +82,15 @@ h1, h2 {
      border: none;
      border-radius: 10px;
      background: white;
-     width: 300px;
+     width: 290px;
 }
 #add-to-do{
      position: absolute;
      display: flex;
-
      bottom: 20px;
      left: 20px;
 }
 #add-to-do i{
-     /* float: right; */
-     /* position: absolute; */
      font-size: 3em;
      top: 5px;
      right: 5px;
