@@ -14,6 +14,10 @@ body{
      background-color: var(--primary-color);
      color: white;
      height: 100vh;
+     position: relative;
+}
+#container {
+     /* position: relative; */
 }
 header{
      position: relative;
@@ -81,16 +85,20 @@ h1, h2 {
      border: none;
      border-radius: 10px;
      background: white;
-     width: 90%;
+     width: 300px;
 }
 #add-to-do{
-     position: relative;
-     bottom: 0;
-     left: 0;
+     position: absolute;
+     display: flex;
+
+     bottom: 20px;
+     left: 20px;
 }
 #add-to-do i{
-     position: absolute;
-     font-size: 2.5em;
+     /* float: right; */
+     /* position: absolute; */
+     font-size: 3em;
      top: 5px;
      right: 5px;
+     margin: 8px;
 }
