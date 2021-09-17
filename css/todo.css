@@ -7,18 +7,15 @@
      padding: 0;
      box-sizing: border-box;
 }
-/* html{
-     height: 100vh;
-} */
 body{
      font-family: 'Roboto', sans-serif;
      font-size: 62.5%;
      line-height: 1.4;
      background-color: var(--primary-color);
      color: white;
-     
-     position: relative;
-     /* overflow: hidden; */
+}
+.desktop-menu{
+     display: none;
 }
 header{
      position: relative;
@@ -46,7 +43,6 @@ header::before {
 }
 .content{
      padding: 10px 20px;
-     /* position: relative; */
 }
 .content h1 {
      text-transform: uppercase;
@@ -65,7 +61,7 @@ h1, h2 {
      font-size: 1.2rem;
 }
 #list {
-     height: 50vh;
+     height: 53vh;
      /* border: 2px solid black; */
      overflow: scroll;
      margin-bottom: 20px;
@@ -88,20 +84,63 @@ h1, h2 {
 .item i{
      margin-top: 3px;
 }
+.fa-trash-alt:hover{
+     color: red;
+     transition: all .25s ease;
+}
+.fa-trash-alt:active{
+     color: red;
+}
 #add-to-do {
      display: flex;
      gap: 10px;
-     /* position: absolute;
-     bottom: -45px;
-     left: 20px; */
 }
 #input {
-     width: 290px;
+     width: 100%;
      padding: 10px 15px;
      border-radius: 10px;
      border: none;
 }
 .fa-plus-circle {
-     font-size: 2.2rem;
+     font-size: 2.5rem;
      margin-top: 3px;
+}
+
+/* For tablet devices */
+@media (min-width: 768px) {
+     .content{
+          width: 60vw;
+          margin: 0 auto;
+     }
+}
+
+/* For Desktop devices */
+@media (min-width: 1440px) {
+     .content{
+          width: 60vw;
+          margin: 0 auto;
+     }
+     .menu-wrap{
+          display: none;
+     }
+     .desktop-menu{
+          display: flex;
+          position: absolute;
+          top: 20px;
+          left: 30px;
+          gap: 40px;
+          font-size: 1.1rem;
+          list-style: none;
+     }
+     .desktop-menu li a{
+          text-decoration: none;
+          color: inherit;
+     }
+     .desktop-menu li a:hover {
+          border-bottom: 2px solid white;
+     }
+     .item{
+          height: 50px;
+          padding-top: 15px;
+     }
 }

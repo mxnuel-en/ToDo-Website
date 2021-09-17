@@ -13,6 +13,9 @@ body{
      font-size: 62.5%;
      line-height: 1.4;
 }
+.desktop-menu{
+     display: none;
+}
 .container{
      max-width: 960px;
      margin: auto;
@@ -62,4 +65,25 @@ header p {
 .btn:hover {
      color: white;
      opacity: 0.7;
+}
+
+@media (min-width: 1440px) {
+     .menu-wrap{
+          display: none;
+     }
+     .desktop-menu{
+          display: flex;
+          justify-content: center;
+          gap: 40px;
+          font-size: 1.3rem;
+          list-style: none;
+          padding-top: 30px;
+     }
+     .desktop-menu li a{
+          text-decoration: none;
+          color: inherit;
+     }
+     .desktop-menu li a:hover {
+          border-bottom: 2px solid white;
+     }
 }

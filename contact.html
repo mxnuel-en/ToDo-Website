@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <meta name = 'theme-color' content = '#72B1BC'>
+
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+
+     <link rel="stylesheet" href="css/contact.css">
+     <link rel="stylesheet" href="menuToggle.css">
+
+     <title>Contact Me</title>
+</head>
+<body>
+     <div id="wrapper">
+          <div class="menu-wrap">
+               <input type="checkbox" class="toggler">
+               <div class="hamburger">
+                    <div></div>
+               </div>
+               <div class="menu">
+                    <div>
+                         <div>
+                              <ul>
+                                   <li><a href="index.html">Home</a></li>
+                                   <li><a href="todo.html">Todo</a></li>
+                                   <li><a href="#">Contact</a></li>
+                              </ul>
+                         </div>
+                    </div>
+               </div>
+          </div>
+          <div class="desktop-menu">
+               <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="todo.html">Todo</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+               </ul>
+          </div>
+          
+          <section>
+               <header>
+                    <div class="header-content">
+                         <h1>Drop Me a Line</h1>
+                         <p>I would love to hear from you...</p>
+                    </div>
+               </header>
+
+               <div class="form-container">
+                    <form action="#">
+                         <fieldset>
+                              <legend><em>Contact Information</em></legend>
+     
+                              <p>
+                                   <label for="name">Name: </label>
+                                   <input type="text" name="name" id="name">
+                              </p>
+                              
+                              <br>
+     
+                              <p>
+                                   <label for="email">Email:</label>
+                                   <input type="email" name="email" id="email">
+                              </p>
+                              
+                              <br>
+     
+                              <p>
+                                   <label for="comments" id="textarea-label">Comments:</label>
+                                   <textarea name="comments" id="comment-box" cols="24" rows="4" placeholder="Comment here..."></textarea>
+                              </p>
+     
+                              <br>
+     
+                              <input type="submit" value="Send Message" id="btn">
+                         </fieldset>
+                    </form>
+               </div>  
+          </section>
+     </div>
+
+
+</body>
+</html>
