@@ -7,13 +7,16 @@
      padding: 0;
      box-sizing: border-box;
 }
+html{
+     height: 100vh;
+}
 body{
      font-family: 'Roboto', sans-serif;
      font-size: 62.5%;
      line-height: 1.4;
      background-color: var(--primary-color);
      color: white;
-     height: 100vh;
+     
      position: relative;
      overflow: hidden;
 }
@@ -88,9 +91,8 @@ h1, h2 {
      display: flex;
      gap: 10px;
      position: absolute;
+     bottom: -45px;
      left: 20px;
-     bottom:  20px;
-     /* justify-content: space-between; */
 }
 #input {
      width: 290px;
