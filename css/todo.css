@@ -52,20 +52,7 @@ header::before {
 h1, h2 {
      font-size: 1.2rem;
 }
-.clear{
-     position: absolute;
-     top: 15px;
-     right: 15px;
-     background-color: transparent;
-}
-.clear button {
-     background-color: transparent;
-     border: none;
-     color: white;
-}
-.clear .fa-sync {
-     font-size: 1.2rem;
-}
+
 .todolist {
      height: 45vh;
      /* border: 2px solid black; */
@@ -73,30 +60,39 @@ h1, h2 {
      margin-bottom: 10px;
 }
 .todolist li {
+     position: relative;
      list-style-type: none;
      display: flex;
      gap: 15px;
+     line-height: 45px;
      justify-content: space-between;
-     padding: 10px 15px;
+     padding: 0 15px;
      border-radius: 10px;
      background-color: rgb(245, 245, 245);
      color: black;
      font-size: .9rem;
      margin-bottom: 5px;
+     height: 45px;
+     overflow-x: hidden;
 }
-.todolist li {
-     display: flex;   
+.todolist li span {
+     position: absolute;
+     right: -45px;
+     background-color: red;
+     height: 100%;
+     width: 45px;
+     text-align: center;
+     border-radius: 0 5px 5px 0;
+     cursor: pointer;
+     color: white;
 }
-.fa-trash:hover{
-     color: red;
-     transition: all .25s ease;
-}
-.fa-trash:active{
-     color: red;
+.todolist li:hover span {
+     right: 0;
+     transition: all .3s ease-in-out;
 }
 .inputField {
      display: flex;
-     gap: 10px;
+     gap: 5px;
      margin-bottom: 20px;
 }
 .inputField input {
@@ -105,17 +101,48 @@ h1, h2 {
      border-radius: 10px;
      border: none;
 }
+.inputField input:active{
+     outline: none;
+}
 .inputField button {
      font-size: 1.5rem;
      padding: 7px 8px;
-     border-radius: 50%;
+     border-radius: 7px;
      border: none;
+     background-color: #153744;
+     cursor: pointer;
+     color: white;
+     opacity: 0.5;
+     pointer-events: none;
+}
+.inputField button.active {
+     opacity: 1;
+     pointer-events: auto;
 }
 .footer {
-     text-align: center;
      font-size: 1rem;
+     display: flex;
+     gap: 10px;
+     justify-content: center;
+     align-items: center;
 }
 .task-no {
+     color: red;
+}
+.clear button {
+     padding: 10px;
+     background-color: #153744;
+     border-radius: 5px;
+     border: none;
+     color: white;
+     opacity: 0.5;
+     pointer-events: none;
+}
+.clear button.active {
+     opacity: 1;
+     pointer-events: auto;
+}
+.clear button:focus {
      color: red;
 }
 
@@ -129,10 +156,6 @@ h1, h2 {
 
 /* For Desktop devices */
 @media (min-width: 1440px) {
-     .content{
-          width: 60vw;
-          margin: 0 auto;
-     }
      .menu-wrap{
           display: none;
      }
@@ -154,6 +177,6 @@ h1, h2 {
      }
      .todolist li{
           height: 50px;
-          padding-top: 15px;
+          line-height: 50px;
      }
 }

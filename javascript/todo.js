@@ -18,24 +18,8 @@ if (hourNow < 12){
 var elGreetings = document.getElementById('greet');
 elGreetings.innerHTML = greeting;
 
-// --------------------------------------------------------------
-// Selection of Elements
-// --------------------------------------------------------------
-const clear = document.querySelector(".clear");
-const dateElement = document.getElementById("date");
-const list = document.getElementById("list");
-const input = document.getElementById("input");
-
-// Class Names
-const CHECK = "fa-check-circle";
-const UNCHECK = "fa-circle";
-const LINE_THROUGH = "lineThrough";
-
-// Variables
-let LIST = []
-     , id = 0;
-
 // Showing Today's Date
+const dateElement = document.getElementById("date");
 const options = {
      weekday : 'long',
      month: 'short',
@@ -44,73 +28,80 @@ const options = {
 
 dateElement.innerHTML = today.toLocaleDateString("en-US", options);
 
-// Adding ToDo function
-function addToDo (toDo, id, done, trash) {
-     if (trash) {
-          return;
+// --------------------------------------------------------------
+// Selection of Elements
+// --------------------------------------------------------------
+const inputBox = document.querySelector (".inputField input");
+const addBtn = document.querySelector (".inputField button");
+const todoList = document.querySelector (".todolist");
+const deleteAllBtn = document.querySelector (".clear button");
+
+inputBox.onkeyup = () => {
+     let userData = inputBox.value; //getting user entered value
+     if (userData.trim() != 0) { //if user values aren't only spaces
+          addBtn.classList.add ("active"); //activate the add button
+     } else{
+          addBtn.classList.remove ("active"); //unactivate the add button
      }
-
-     const DONE = done ? CHECK : UNCHECK;
-     const LINE = done ? LINE_THROUGH : "";
-
-     const item = `
-          <li class="item">
-          <i class="fas ${DONE}" job="complete" id=${id}></i>
-          <p class="text ${LINE}>">${toDo}</p>
-          <i class="far fa-trash-alt" job="delete" id=${id}></i>
-          </li>
-     `;
-     
-     const position = "beforeend";
-     list.insertAdjacentHTML(position, item);
 }
 
-// Adding an item to the list when the user presses enter
-document.addEventListener('keyup', function(even) {
-     if (event.keyCode == 13) {
-          const toDo =  input.value;
-          // if th input isn't empty
-          if (toDo){
-               addToDo(toDo, id, false, false);
+showTasks(); //calling showTasks function
 
-               LIST.push({
-                    name : toDo,
-                    id : id,
-                    done : false,
-                    trash : false
-               });
-
-               id++;
-          }
-          input.value = "";
+// if user clicks on the button
+addBtn.onclick = ()=> {
+     let userData = inputBox.value;
+     let getLocalStorage = localStorage.getItem ("New Todo"); //getting local storage
+     if (getLocalStorage == null){//if local storage is null
+          listArr = []; //creating blank array
+     } else {
+          listArr = JSON.parse (getLocalStorage);
      }
-});
-
-addToDo ('Head', 1, false, true);
-
-// For when the user clicks on the add button to complete his entry of todo
-function completeTodo (element) {
-     element.classList.toggle (CHECK);
-     element.classList.toggle (UNCHECK);
-     element.parentNode.querySelector(".text").classList.toggle (LINE_THROUGH);
-
-     LIST [element.id].done = LIST [element.id].done ? false : true;
+     listArr.push(userData); //pushing or adding user data
+     localStorage.setItem ("New Todo", JSON.stringify(listArr)); //transforming js object into a json string
+     showTasks(); //calling showTasks function
+     addBtn.classList.remove("active");
 }
 
-// For the item to disappear into bin when the bin bucket is click
-function removeToDo (element) {
-     element.parentNode.parentNode.removeChild(element.parentNode);
-     LIST[element.id].trash = true;
+// function to add task list inside ul
+function showTasks() {
+     let getLocalStorage = localStorage.getItem("New Todo"); //Getting local storage
+     if (getLocalStorage == null) {//if local storage is null
+          listArr = []; //creating a blank array
+     } else {
+          listArr = JSON.parse (getLocalStorage); //transforming json string into a js object
+     }
+
+     const pendingNumb = document.querySelector (".task-no");
+     pendingNumb.textContent = listArr.length; //passing the length value pending number
+
+     if (listArr.length > 0) {
+          deleteAllBtn.classList.add ("active"); //activate the clear all button
+     }else {
+          deleteAllBtn.classList.remove ("active"); //deactivate the clear all button
+     }
+
+     let newLiTag = '';
+     listArr.forEach((element, index) => {
+          newLiTag += `<li> ${element} <span onclick = "deleteTask(${index})";><i class="fas fa-trash"></i></span></li>`;          
+     });
+     todoList.innerHTML = newLiTag; //adding new li tag inside ul tag
+     inputBox.value = ""; //Once the task has been added, leave the input field blank
 }
 
-// To target the items created dynamically
-list.addEventListener("click", function(event) {
-     const element = event.target; //return the clicked element into the list
-     const elementJob = element.attributes.job.value; //complete or delete
+// delete task function
+function deleteTask(index) {
+     let getLocalStorage = localStorage.getItem ("New Todo");
+     listArr = JSON.parse (getLocalStorage);
+     listArr.splice(index, 1); //delete or remove the particular indexed li
+     // after removing the li again, update the local Storage
+     localStorage.setItem ("New Todo", JSON.stringify(listArr)); //transforming js object into a json string
+     showTasks(); //calling showTasks function
+}
 
-     if (elementJob == "complete") {
-          completeTodo(element);
-     } else if (elementJob == "delete") {
-          removeToDo(element);
-     }
-})
+// deleting all tasks function
+deleteAllBtn.onclick = () => {
+     listArr = []; //empty an array
+     //After removing alll tasks again, update the local storage
+     localStorage.setItem ("New Todo", JSON.stringify(listArr)); //transforming js object into json string
+     showTasks(); //calling show tasks function
+}

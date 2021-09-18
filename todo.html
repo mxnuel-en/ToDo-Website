@@ -10,6 +10,7 @@
      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
      <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+     <link rel="shortcut icon" href="images/todo-icon.svg" type="image/x-icon">
 
      <link rel="stylesheet" href="css/todo.css">
      <link rel="stylesheet" href="menuToggle.css">
@@ -43,14 +44,9 @@
                     <li><a href="contact.html">Contact</a></li>
                </ul>
 
-               <div class="clear">
-                    <button>
-                         <i class="fas fa-sync"></i>
-                    </button>    
-               </div>
                <div class="intro">
                     <h1 id="greet"></h1>
-                    <h2 id="date"></h2>
+                    <h2>Today is <span id="date"></span></h2>
                </div>
           </header>
 
@@ -64,36 +60,16 @@
                </div>
 
                <ul class="todolist">
-                    <li>
-                         Buy a gaming laptop. <span><i class="fas fa-trash"></i></span>
-                    </li>
-                    <li>
-                         Complete my homework <span><i class="fas fa-trash"></i></span>
-                    </li>
-                    <li>
-                         Take driving lessons <span><i class="fas fa-trash"></i></span>
-                    </li>
-                    <li>
-                         Beat up my girlfriend <span><i class="fas fa-trash"></i></span>
-                    </li>
-                    <li>
-                         Kill a naughty kid <span><i class="fas fa-trash"></i></span>
-                    </li>
-                    <li>
-                         Kill a naughty kid <span><i class="fas fa-trash"></i></span>
-                    </li>
-                    <li>
-                         Kill a naughty kid <span><i class="fas fa-trash"></i></span>
-                    </li>
-                    <li>
-                         Kill a naughty kid <span><i class="fas fa-trash"></i></span>
-                    </li>
-                    <li>
-                         Kill a naughty kid <span><i class="fas fa-trash"></i></span>
-                    </li>
+                    <!-- Data comes from javascript local storage -->
                </ul>
                <div class="footer">
                     <p>You have <span class="task-no">5</span> pending tasks</p>
+
+                    <div class="clear">
+                         <button>
+                              Clear Tasks
+                         </button>    
+                    </div>
                </div>
           </section>
 
