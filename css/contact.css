@@ -15,6 +15,9 @@ body{
      background-color: var(--primary-color);
      color: white;
 }
+.desktop-menu {
+     display: none;
+}
 header{
      position: relative;
      background: var(--overlay-color);
