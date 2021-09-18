@@ -119,3 +119,26 @@ textarea::placeholder{
           width: 280px;
      }
 }
+@media (min-width: 1440px) {
+     .menu-wrap{
+          display: none;
+     }
+     .desktop-menu{
+          display: flex;
+          position: absolute;
+          top: 20px;
+          left: 30px;
+          gap: 40px;
+          font-size: 1.1rem;
+          list-style: none;
+          z-index: 10;
+     }
+     .desktop-menu li a{
+          text-decoration: none;
+          color: white;
+          list-style: none;
+     }
+     .desktop-menu li a:hover {
+          border-bottom: 2px solid white;
+     }
+}
